@@ -1,5 +1,7 @@
 FROM ubuntu:12.04
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y curl git-core build-essential bzr
+
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y curl git-core build-essential bzr python-software-properties
+RUN add-apt-repository -y ppa:tortoisehg-ppa/releases; apt-get update; apt-get install -y mercurial
 RUN mkdir -p /tmp/downloads
  
 # install go
